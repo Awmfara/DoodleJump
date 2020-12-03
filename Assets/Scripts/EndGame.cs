@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class EndGame : MonoBehaviour
 {
-    [SerializeField]
-    int timer = default;
+    // Start is called before the first frame update
     void Start()
     {
         

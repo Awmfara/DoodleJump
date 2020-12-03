@@ -5,9 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip springClip;
-    [SerializeField]
-    private AudioSource springSource;
+    private AudioSource springSource = default;
 
     public void SpringSound()
     {
