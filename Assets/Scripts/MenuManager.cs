@@ -15,10 +15,14 @@ public class MenuManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
+   //Starts newgame
     public void NewGame()
     {
         SceneManager.LoadScene(Scene);
     }
+    /// <summary>
+    /// Quits Game
+    /// </summary>
     public void QuitGame()
     {
 #if UNITY_EDITOR // if In Unity Editor

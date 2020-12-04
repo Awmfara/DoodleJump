@@ -14,7 +14,9 @@ public class Background : MonoBehaviour
         player = FindObjectOfType<Player>();
         resetPoint = player.transform.position;
     }
-
+    /// <summary>
+    /// Moves background  grid to palyer if player moves beyond bounds of background
+    /// </summary>
     void Update()
     {
         playerProgession = Vector2.Distance(resetPoint, player.transform.position);

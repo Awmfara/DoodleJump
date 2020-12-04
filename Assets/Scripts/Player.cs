@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     #region Components
+    [SerializeField]
     GameManager gameManager;
     Rigidbody2D playerBody;
     AudioManager audioManager;
@@ -28,15 +29,19 @@ public class Player : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         audioManager = FindObjectOfType<AudioManager>();
         charAnimator = GetComponent<Animator>();
-        gameManager = GetComponent<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
         hitPlatform = false;
     }
-
+/// <summary>
+/// Gets Player Input from horizontal axis;
+/// Sets player Speed;
+/// </summary>
     private void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
         playerBody.velocity = new Vector2(moveInput * movementSpeed, playerBody.velocity.y);
     }
+   //Makes sound and bounces Player if hit platforms
     private void Update()
     {
         if (hitPlatform)
@@ -46,6 +51,11 @@ public class Player : MonoBehaviour
             hitPlatform = false;
         }
     }
+    /// <summary>
+    /// If hit platform triggers animation and bounces player
+    /// If line of death triggers death code;
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Platform")

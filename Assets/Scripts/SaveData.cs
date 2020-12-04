@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-
-public class SaveData
+/// <summary>
+/// Basic Script with Name and HighScore;
+/// </summary>
+public class SaveData : MonoBehaviour
 {
-    public struct Score
-    {
-        public string name;
-        public float height;
-    }
-  
+    public new string name = "";
+    public float height = 0;
+
 }
 
